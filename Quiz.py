@@ -45,6 +45,8 @@ class Quiz:
         file.close()
         return questions
 
+    def clear():
+        pass
 
     def display(self,questions):
         #print(questions)
@@ -62,22 +64,10 @@ class Quiz:
             borderwidth=5
         )
 
-        window.rowconfigure([0,1,2,3,4], minsize=50)
-        window.columnconfigure([0, 1, 2, 3,4,5,6,7,8,9], minsize=50)
+        window.rowconfigure([0,1,2,3,4,5,6,7,8,9,10,11], minsize=50)
+        window.columnconfigure([0, 1, 2, 3,4], minsize=50)
 
-        #unused loop.
-        # for i in range(3):
-        #     window.columnconfigure(i, weight=1, minsize=75)
-        #     window.rowconfigure(i, weight=1, minsize=50)
-        #
-        #     for j in range(3):
-        #         frame = tk.Frame(
-        #             master=window,
-        #             relief= tk.RIDGE,
-        #             borderwidth=5
-        #         )
-        #         frame.grid(row=i,column=j, padx=5, pady=5)
-        #         # label = tk.Label(master=frame, text=f"Row {i}\nColumn {j}", padx=5 , pady=5#
+
 
         k=tk.Label(text="QUIZ",font=30)
         k.grid(row=0,column=3)
@@ -153,6 +143,11 @@ class Quiz:
             j.grid(column=3, row=count2+1)
             count2+=1
 
+        btn_submit= tk.Button(text="Submit", background="green", foreground="white")
+        btn_submit.grid(column = 1 , row=11)
+        btn_clear = tk.Button(master=window,text="Clear", background="red", foreground="white")
+        btn_clear.grid(column=2, row=11)
+
 
 
 
@@ -161,6 +156,7 @@ class Quiz:
 
 
         window.mainloop()
+
 
 
 
